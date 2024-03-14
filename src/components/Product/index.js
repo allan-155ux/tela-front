@@ -16,7 +16,7 @@ function Product({ src, tittle, description, id, price }) {
                     {description}
                 </p>
                 <h2>
-                    R${price}
+                    {price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}
                 </h2>
             </div>
         </ScrollToTopLink>
