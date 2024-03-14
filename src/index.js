@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
 import ColectionPage from "./pages/ColectionPage";
 import ProductPage from "./pages/ProductPage";
+import Checkout from "./pages/Checkout";
 import './index.css'
 import { CartProvider } from "./contexts/cartContext";
 
@@ -12,9 +13,10 @@ createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<CartProvider><MainLayout></MainLayout></CartProvider>}>
-        <Route path="" element={<HomePage/>}/>
-        <Route path="product/:id" element={<ProductPage/>}/>
-        <Route path="colection/:colection" element={<ColectionPage/>}/>
+        <Route path="" element={<HomePage />} />
+        <Route path="product/:id" element={<ProductPage />} />
+        <Route path="colection/:colection" element={<ColectionPage />} />
+        <Route path="checkout" element={<Checkout />} />
       </Route>
     </Routes>
   </BrowserRouter>

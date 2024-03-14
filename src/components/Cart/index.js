@@ -47,7 +47,7 @@ function Cart() {
                             <br />
                             <h1>Total: {total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h1>
                         </div>
-                        <Link to='/checkout'><button className='cart-item'>Finalizar Compra</button></Link>
+                        <Link to='/checkout'><button onClick={()=>setIsOpen(!isOpen)} className='cart-item'>Finalizar Compra</button></Link>
                     </div>
                 </div>
             }
