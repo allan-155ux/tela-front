@@ -32,7 +32,7 @@ function ProductList({setColection}) {
       {products &&
       products.map((product)=>{
         return(
-          <Product id={product.id} tittle={product.title} description={product.subtitle} src={product.url} />
+          <Product price={product.price} id={product.id} tittle={product.title} description={product.subtitle} src={product.url} />
         )
       })}
     </div>

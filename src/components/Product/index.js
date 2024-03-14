@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.css'
 import ScrollToTopLink from '../ScrollToTopLink'
 
-function Product({ src, tittle, description, id }) {
+function Product({ src, tittle, description, id, price }) {
     return (
         <ScrollToTopLink className='product-link' to={`/product/${id}`}>
             <div className='product-container'>
@@ -15,6 +15,9 @@ function Product({ src, tittle, description, id }) {
                 <p>
                     {description}
                 </p>
+                <h2>
+                    R${price}
+                </h2>
             </div>
         </ScrollToTopLink>
     )

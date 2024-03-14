@@ -17,7 +17,7 @@ function HomePage() {
             <Badges />
             <ProductList setColection='promotion'/>
             <Feedbecks />
-            <ProductList setColection='drink'/>
+            <ProductList setColection='pizza'/>
             <Footer />
         </>
     )
