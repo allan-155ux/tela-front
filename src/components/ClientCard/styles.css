@@ -1,0 +1,42 @@
+.clientcard {
+    background-color: #e9c47a;
+    width: 80%;
+    height: 300px;
+    padding: 50px 0px;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.clientcard-infos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.clientcard-infos h1{
+    color: brown;
+}
+
+.clientcard-infos-picture {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+
+@media only screen and (max-width: 425px){
+    .clientcard-infos {
+        text-align: center;
+        display: block;
+    }
+    .clientcard {
+        height: 400px;
+    }
+    .clientcard-infos-picture {
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+    }
+}

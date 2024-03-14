@@ -1,0 +1,22 @@
+.product-container{
+    text-align: center;
+    margin: 25px;
+}
+
+.product-container h3{
+    text-align: left;
+    font-size: 1rem;
+}
+
+.product-container p{
+    text-align: left;
+    font-size: 0.7rem;
+    width: 80%;
+}
+
+.product-img{
+    border-radius: 18px;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+}

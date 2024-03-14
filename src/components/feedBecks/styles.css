@@ -1,0 +1,18 @@
+.feedbecks-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+
+@media only screen and (max-width: 1060px){
+    .feedbecks-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .feedbecks-container{
+        grid-template-columns: 1fr;
+    }
+}

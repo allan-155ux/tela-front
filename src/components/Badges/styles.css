@@ -1,0 +1,14 @@
+.badges-container{
+    display: flex;
+    justify-content: space-evenly;
+    
+    background-color: gray;
+}
+
+@media only screen and (max-width: 768px) {
+    .badges-container{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    }
+}
