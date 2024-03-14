@@ -6,7 +6,7 @@ const CartContext = createContext();
 // Componente de provedor do contexto do carrinho
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
-    const [isOpen, setIsOpen] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     // Função para adicionar um item ao carrinho
     const addToCart = (item) => {
