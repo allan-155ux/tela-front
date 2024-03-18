@@ -9,12 +9,10 @@ import ProductList from '../../components/ProductList'
 import Footer from '../../components/Footer'
 import PopUp from '../../components/PopUp'
 
-import { useCart } from '../../contexts/cartContext'
+import FeatureProduct from '../../components/FeatureProduct'
 
 function ProductPage() {
-
-    const { addToCart } = useCart()
-
+    
     const [product, setProduct] = useState([])
 
     const params = useParams()
@@ -40,23 +38,7 @@ function ProductPage() {
             <PopUp button='WELCOME50' text='Imagine desfrutar de suas refeições favoritas com metade do preço! Simplesmente use o código promocional "WELCOME50" durante o checkout e aproveite esse generoso desconto em uma ampla variedade de opções gastronômicas.' tittle='50%off pra você aproveitar o novo delivery da sua cidade' />
             <Header />
             {product &&
-                <div className='productpage-product'>
-                    <img className='productpage-image' src={product.url} />
-                    <div className='productpage-infos'>
-                        <h1>{product.title}</h1>
-                        <h3>{product.subtitle}</h3>
-                        <p>{product.description}</p>
-
-                        <div className='productpage-price'>
-                            <h2>R${product.lastprice}</h2>
-                            <h1>R${product.price}</h1>
-                        </div>
-
-                        <div>
-                            <button onClick={() =>addToCart(product)}>Adicionar</button>
-                        </div>
-                    </div>
-                </div>
+                <FeatureProduct product={product}/>
             }
             <ProductList setColection={randomTag} />
             <Footer />
