@@ -10,13 +10,14 @@ function Checkout() {
 
   const { getTotal } = useCart()
 
+  const [alert, setAlert] = useState('')
   const [client, setClient] = useState()
 
   const [completedAdress, setCompletedAdress] = useState(false)
 
   // Card
   const [formDataCard, setFormDataCard] = useState({
-    customerId: '',
+    customerId: client,
     value: getTotal(),
     description: 'Compra Online',
     cardNumber: '',
@@ -53,6 +54,7 @@ function Checkout() {
       console.log('Pagamento criado:', responseData);
     } catch (error) {
       console.error('Erro ao criar pagamento com cartão de crédito:', error.message);
+      setAlert('Confira os dados do cartão e tente novamente')
     }
   };
 
@@ -75,6 +77,7 @@ function Checkout() {
   };
 
   const handleCreateClient = async (e) => {
+    e.preventDefault()
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/clients`, {
         method: 'POST',
@@ -87,12 +90,12 @@ function Checkout() {
       if (!response.ok) {
         const errorMessage = await response.json();
         throw new Error(errorMessage.error);
-        setCompletedAdress(true)
       }
-
+      
       const responseData = await response.json();
       console.log('Cliente criado:', responseData);
-      setClient(responseData)
+      setCompletedAdress(true)
+      setClient(responseData.id)
     } catch (error) {
       console.error('Erro ao criar cliente:', error.message);
     }
@@ -124,6 +127,7 @@ function Checkout() {
               <input type="text" name="cardCvv" placeholder="CVV" value={formDataCard.cardCvv} onChange={handleCardChange} />
             </div>
             <div className='checkout-input'>
+              <span style={{color: 'red', fontSize: '0.8rem'}}>{alert}</span>
               <button onClick={handleSubmit}>Finalizar pagamento</button>
             </div>
           </form>
@@ -171,8 +175,8 @@ function Checkout() {
               <input type="text" name="phone" placeholder="Telefone" value={formData.phone} onChange={handleChange} />
             </div>
             <div className='checkout-input'>
-              <button onClick={()=>{
-                handleCreateClient()
+              <button onClick={(e)=>{
+                handleCreateClient(e)
               }}>Ir para pagamento</button>
             </div>
           </form>
