@@ -36,7 +36,7 @@ function Checkout() {
     setFormDataCard({ ...formData, customerId: client });
 
     try {
-      const response = await fetch('/create-payment-card', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/create-payment-card`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ function Checkout() {
 
   const handleCreateClient = async (e) => {
     try {
-      const response = await fetch('/clients', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/clients`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
