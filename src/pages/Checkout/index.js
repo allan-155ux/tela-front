@@ -100,13 +100,14 @@ function Checkout() {
       console.error('Erro ao criar cliente:', error.message);
     }
   };
-
+  
   return (
     <>
       <Header />
       {completedAdress ?
         <div>
           <form className='checkout-form'>
+          <div onClick={()=>setCompletedAdress(!completedAdress)} style={{textAlign: "left", width: '100%', marginBottom: '20px', color: 'red'}}>voltar</div>
             <h1>
               Informações de pagamento
             </h1>
