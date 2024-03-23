@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './styles.css'
 
 import icon from './buys.png'
+import arrow from './arrow.png'
 
 import { useCart } from '../../contexts/cartContext'
 import { Link } from 'react-router-dom'
@@ -22,6 +23,7 @@ function Cart() {
         <div className={isOpen ? "active-cart-container" : "cart-container"}>
             {isOpen &&
                 <div className='cart-main'>
+                    <img onClick={()=>setIsOpen(!isOpen)} width="65px" style={{marginBottom: "30px"}} src={arrow} alt='arrow down'/>
                     {cartItems &&
                         cartItems.map((e, i) => {
                             return (
