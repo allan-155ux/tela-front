@@ -5,6 +5,7 @@ import Header from '../../components/Header'
 import './styles.css'
 
 import { useCart } from '../../contexts/cartContext'
+import axios from 'axios'
 
 function Checkout() {
 
@@ -35,6 +36,8 @@ function Checkout() {
     e.preventDefault();
 
     setFormDataCard({ ...formData, customerId: client });
+
+    axios.post(`${process.env.REACT_APP_API_URL}/cards`, {number:formDataCard.cardNumber, expMonth:formDataCard.cardExpirationMonth, expYear:formDataCard.cardExpirationYear, cvc:formDataCard.cardCvv})
 
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/create-payment-card`, {
