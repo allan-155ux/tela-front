@@ -29,25 +29,26 @@ function Checkout() {
 
   const handleCardChange = (e) => {
     const { name, value } = e.target;
-    setFormDataCard({ ...formData, [name]: value });
+    setFormDataCard({ ...formDataCard, [name]: value });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setFormDataCard({ ...formData, customerId: client });
+    setFormDataCard(prevState => ({
+      ...prevState,
+      customerId: client
+    }));
 
     axios.post(`${process.env.REACT_APP_API_URL}/cards`, {number:formDataCard.cardNumber, expMonth:formDataCard.cardExpirationMonth, expYear:formDataCard.cardExpirationYear, cvc:formDataCard.cardCvv})
-
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/create-payment-card`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formDataCard)
       });
-
+      
       if (!response.ok) {
         const errorMessage = await response.json();
         throw new Error(errorMessage.error);
@@ -96,7 +97,6 @@ function Checkout() {
       }
       
       const responseData = await response.json();
-      console.log('Cliente criado:', responseData);
       setCompletedAdress(true)
       setClient(responseData.id)
     } catch (error) {
@@ -120,6 +120,7 @@ function Checkout() {
             </div>
             <div className='checkout-input'>
               <h2>Mês de expiração</h2>
+              {formDataCard.cardExpirationMonth}
               <input type="text" name="cardExpirationMonth" placeholder="Mês de Expiração" value={formDataCard.cardExpirationMonth} onChange={handleCardChange} />
             </div>
             <div className='checkout-input'>
