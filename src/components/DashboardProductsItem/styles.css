@@ -22,6 +22,16 @@
     align-items: center;
 }
 
-.dashboard-products-item-icons{
 
+
+@media only screen and (max-width: 780px){
+    .dashboard-products-item-tittle{
+        display: block;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .dashboard-products-item-icons{
+        display: flex;
+        justify-content: right;
+    }
 }

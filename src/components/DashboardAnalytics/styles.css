@@ -1,3 +1,9 @@
 .dashboard-analytics{
     width: 20vw;
 }
+
+@media only screen and (max-width: 780px){
+    .dashboard-analytics{
+        display: none;
+    }
+}

@@ -24,3 +24,11 @@
 .dashboardproducts-form{
     width: 100%;
 }
+
+@media only screen and (max-width: 780px){
+    .dashboard-products{
+        box-sizing: border-box;
+        width: 80vw;
+        margin: 0 auto ;
+    }
+}

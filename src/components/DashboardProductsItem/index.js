@@ -23,7 +23,7 @@ function DashboardProductsItem({ product }) {
         <div className='dashboard-products-item-tittle' >
           <h1>R${product.price}</h1><p>{product.title}</p>
         </div>
-        <div>
+        <div className='dashboard-products-item-icons'>
           <img style={{marginRight: '10px'}} onClick={() => setIsOpen(!isOpen)} height='20px' src={edit} alt='edit' />
           <img onClick={delProduct} height='20px' src={del} alt='delete' />
         </div>
