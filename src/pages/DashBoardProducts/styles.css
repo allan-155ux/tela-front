@@ -1,0 +1,26 @@
+.dashboard-products{
+    width: 60vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.dashboard-add-product{
+    background-color: #29ABE2;
+    color: white;
+
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+
+    font-size: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboardproducts-form{
+    width: 100%;
+}

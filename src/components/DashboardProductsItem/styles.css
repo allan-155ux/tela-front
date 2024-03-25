@@ -1,0 +1,27 @@
+.dashboard-products-item{
+    width: 100%;
+    background-color: #E6E6E6;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+
+.dashboard-products-item-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-products-item-header h1{
+    font-size: 25px;
+    color: #29ABE2;
+    width: 120px;
+}
+
+.dashboard-products-item-tittle{
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-products-item-icons{
+
+}
